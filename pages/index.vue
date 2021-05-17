@@ -1,34 +1,21 @@
 <template>
-  <v-layout
-    column
-    class="layout"
-  >
+  <section>
     <template
       v-for="article of articles"
     >
-      <v-hover
+      <nuxt-link
         :key="article.slug"
-        v-slot="{ hover }"
+        :to="`/articles/${article.slug}`"
       >
-        <nuxt-link
-          :to="`/articles/${article.slug}`"
-        >
-          <v-card
-            flat
-            class="card-transition"
-            :class="hover ? 'outlined' : ''"
-          >
-            <v-card-title>
-              {{ article.title }}
-            </v-card-title>
-            <v-card-text>
-              {{ article.description }}
-            </v-card-text>
-          </v-card>
-        </nuxt-link>
-      </v-hover>
+        <h2>
+          {{ article.title }}
+        </h2>
+        <div>
+          {{ article.description }}
+        </div>
+      </nuxt-link>
     </template>
-  </v-layout>
+  </section>
 </template>
 
 <script>
@@ -41,6 +28,8 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch()
 
+    console.log(articles)
+
     return {
       articles
     }
@@ -50,7 +39,7 @@ export default {
 
 <style scoped lang="scss">
   .layout {
-    max-width: 600px;
+    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
   }

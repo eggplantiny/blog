@@ -1,4 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
 
 export default {
   /*
@@ -56,7 +55,7 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/tailwindcss'
   ],
   /*
   ** Nuxt.js modules
@@ -79,37 +78,6 @@ export default {
   */
   content: {
     liveEdit: false
-  },
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
-  vuetify: {
-    customVariables: ['~/assets/styles/vuetify.scss'],
-    theme: {
-      themes: {
-        disable: true,
-        light: {
-          primary: colors.indigo.lighten2,
-          secondary: '#ffe5b9',
-          accent: '#487e95',
-          info: '#bee5d3',
-          button: '#2d2d2d',
-          text: '#2d2d2d'
-        },
-        dark: {
-          primary: colors.indigo.lighten2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-          button: '#ffffff',
-          text: '#ffffff'
-        }
-      }
-    }
   },
   /*
   ** Build configuration

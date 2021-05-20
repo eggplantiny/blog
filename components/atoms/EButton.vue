@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn btn--primary"
+    class="btn"
     :class="classes"
     v-bind="$attrs"
     @click="$emit('click')"
@@ -9,43 +9,34 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+import { colorClass } from '@/compositions/classes'
+
+export default defineComponent({
   name: 'EButton',
   props: {
     color: {
       type: String,
-      default: 'normal'
+      default: 'indigo'
+    },
+    dark: {
+      type: Boolean,
+      default: true
     }
   },
-  computed: {
-    classes () {
-      const { color } = this
-      const classes = []
+  setup (props) {
+    const { color, dark } = props
 
-      const colorClass = `btn--${color}`
-      classes.push(colorClass)
-
-      return classes
+    return {
+      classes: colorClass(color, dark)
     }
   }
-}
+})
 </script>
 
 <style scoped lang="scss">
   .btn {
-    @apply text-base font-medium rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-gray-900;
-  }
-
-  .btn--primary {
-    @apply bg-red-400 text-white;
-  }
-
-  .btn--secondary {
-    @apply bg-gray-100 text-black
-  }
-
-  .btn--normal {
-    @apply bg-indigo-400 text-white
+    @apply text-base font-medium rounded-lg px-4 py-2 focus:outline-none transition-colors;
   }
 </style>

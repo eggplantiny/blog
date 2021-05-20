@@ -4,24 +4,26 @@
       Eggplantiny
     </h3>
     <div class="flex">
-      <e-button @click="test">
+      <e-button
+        color="red"
+        @click="test"
+      >
         Accept
       </e-button>
     </div>
   </div>
 </template>
 
-<script>
-import EButton from './EButton'
-export default {
+<script lang="ts">
+import { defineComponent } from '@nuxtjs/composition-api'
+import EButton from '@/components/atoms/EButton'
+
+export default defineComponent({
   name: 'EAppBar',
   components: { EButton },
-  methods: {
-    test () {
-      alert('hello world')
-    }
+  setup () {
   }
-}
+})
 </script>
 
 <style scoped>

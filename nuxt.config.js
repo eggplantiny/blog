@@ -43,8 +43,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-  ],
+  plugins: ['~/plugins/composition-api'],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -55,7 +54,8 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/composition-api/module'
   ],
   /*
   ** Nuxt.js modules
@@ -93,5 +93,8 @@ export default {
       '@nuxt/types',
       '@nuxt/content'
     ]
+  },
+  generate: {
+    interval: 2000
   }
 }

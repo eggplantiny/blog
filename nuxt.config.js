@@ -1,4 +1,6 @@
 
+console.log(process.env.NODE_ENV)
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -29,7 +31,7 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/blog/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap' }
     ]
   },
@@ -43,7 +45,10 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: ['~/plugins/composition-api'],
+  plugins: [
+    '~/plugins/composition-api.js',
+    '~/plugins/update.client.js'
+  ],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components

@@ -4,23 +4,23 @@ header {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply mb-6 mt-12 tracking-wider;
+  @apply tracking-wider;
 }
 
 h1 {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-bold mb-6 mt-12;
 }
 
 h2 {
-  @apply text-2xl font-bold;
+  @apply text-2xl font-bold mb-6 mt-12;
 }
 
 h3 {
-  @apply text-xl font-bold;
+  @apply text-xl font-bold my-3;
 }
 
 h4 {
-  @apply text-lg font-bold;
+  @apply text-lg font-bold my-3;
 }
 
 p {
@@ -28,7 +28,7 @@ p {
 }
 
 strong {
-  @apply font-bold text-indigo-200 select-all;
+  @apply font-bold text-green-200 select-all;
 }
 
 pre, .nuxt-content-highlight {
@@ -44,11 +44,11 @@ blockquote {
 }
 
 img {
-  @apply rounded-lg mt-4 mb-4;
+  @apply rounded-lg mt-4 mb-4 mx-auto;
 }
 
 hr {
-  @apply mt-16 mb-16
+  @apply mt-16 mb-16;
 }
 
 p {
@@ -59,4 +59,12 @@ p {
 
 a {
   @apply underline;
+}
+
+ul {
+  @apply ml-4;
+
+  li {
+    @apply leading-7 list-inside list-disc;
+  }
 }

@@ -4,30 +4,43 @@
       Eggplantiny
     </h3>
     <div class="flex">
-      <e-button
-        :text="true"
-        @click="test"
-      >
-        About
-      </e-button>
+      <template v-for="(button, index) in buttons">
+        <nuxt-link
+          :key="index"
+          :to="button.to"
+        >
+          <e-button
+            :text="true"
+          >
+            {{ button.label }}
+          </e-button>
+        </nuxt-link>
+      </template>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
+import { defineComponent, ref } from '@nuxtjs/composition-api'
 import EButton from '~/components/atoms/Button/EButton.vue'
 
 export default defineComponent({
   name: 'EAppBar',
   components: { EButton },
   setup () {
-    const test = () => {
-      window.alert('hello world')
-    }
+    const buttons = ref([
+      {
+        to: '/',
+        label: 'Blog'
+      },
+      {
+        to: '/about',
+        label: 'About'
+      }
+    ])
 
     return {
-      test
+      buttons
     }
   }
 })

@@ -7,7 +7,7 @@
 
 <script>
 
-import EAppBar from '../components/atoms/EAppBar'
+import EAppBar from '../components/atoms/AppBar/EAppBar'
 export default {
   components: { EAppBar },
   data () {

@@ -19,17 +19,20 @@
         </nuxt-link>
       </template>
     </e-list>
+    <e-card />
   </section>
 </template>
 
-<script>
+<script lang="ts">
 
-import EList from '~/components/atoms/EList'
-import EListItem from '~/components/atoms/EListItem'
+import EList from '~/components/atoms/List/EList.vue'
+import EListItem from '~/components/atoms/List/EListItem.vue'
+import ECard from '~/components/atoms/Card/ECard.vue'
 
 export default {
   name: 'Root',
   components: {
+    ECard,
     EList,
     EListItem
   },
@@ -39,8 +42,6 @@ export default {
       .sortBy('createdAt', 'desc')
       .fetch()
 
-    console.log(articles)
-
     return {
       articles
     }
@@ -49,21 +50,4 @@ export default {
 </script>
 
 <style scoped lang="scss">
-  .layout {
-    max-width: 680px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .outlined {
-    border: black solid 2px;
-  }
-
-  .card-transition {
-    transition: margin-bottom 200ms, margin-top 200ms;
-  }
-
-  a {
-    text-decoration: none;
-  }
 </style>

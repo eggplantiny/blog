@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
-import { colorClass } from '@/compositions/classes'
+import { colorClass } from '~/compositions/classes'
 
 export default defineComponent({
   name: 'EButton',
@@ -23,13 +23,17 @@ export default defineComponent({
     dark: {
       type: Boolean,
       default: true
+    },
+    text: {
+      type: Boolean,
+      default: false
     }
   },
   setup (props) {
-    const { color, dark } = props
+    const { color, dark, text } = props
 
     return {
-      classes: colorClass(color, dark)
+      classes: colorClass(color, dark, text)
     }
   }
 })

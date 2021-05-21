@@ -17,8 +17,6 @@ async function allSettledPromises () {
   } catch (e) {
     console.error(`error on ${e}`)
   }
-
-  console.log(result)
 }
 
 allSettledPromises()

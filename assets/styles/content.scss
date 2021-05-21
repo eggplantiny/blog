@@ -1,0 +1,44 @@
+
+header {
+  @apply text-4xl font-extrabold mb-12;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply mb-6 mt-12 tracking-wider;
+}
+
+h1 {
+  @apply text-3xl font-bold;
+}
+
+h2 {
+  @apply text-2xl font-bold;
+}
+
+h3 {
+  @apply text-xl font-bold;
+}
+
+h4 {
+  @apply text-lg font-bold;
+}
+
+p {
+  @apply leading-8 font-normal break-words tracking-wide;
+}
+
+strong {
+  @apply font-bold text-indigo-200 select-all;
+}
+
+pre, .nuxt-content-highlight {
+  @apply text-sm rounded-lg;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  @apply bg-transparent;
+}
+
+hr {
+  @apply mt-16 mb-16
+}

@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api'
-import { colorClass } from '~/compositions/classes'
+import { defineComponent, reactive } from '@nuxtjs/composition-api'
+import { generateColorClass } from '@/compositions/classes'
 
 export default defineComponent({
   name: 'EButton',
@@ -32,8 +32,10 @@ export default defineComponent({
   setup (props) {
     const { color, dark, text } = props
 
+    const classes = reactive([...generateColorClass(color, dark, text)])
+
     return {
-      classes: colorClass(color, dark, text)
+      classes
     }
   }
 })

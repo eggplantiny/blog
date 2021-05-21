@@ -1,17 +1,15 @@
 <template>
-  <div class="px-4 h-16 bg-indigo-500 flex items-center">
-    <div class="max-w-screen-md mx-auto w-full flex justify-between items-center">
-      <h3 class="font-bold text-white">
-        Eggplantiny
-      </h3>
-      <div class="flex">
-        <e-button
-          :text="true"
-          @click="test"
-        >
-          About
-        </e-button>
-      </div>
+  <div class="px-4 h-16 bg-indigo-900 flex justify-between items-center">
+    <h3 class="font-bold text-white">
+      Eggplantiny
+    </h3>
+    <div class="flex">
+      <e-button
+        :text="true"
+        @click="test"
+      >
+        About
+      </e-button>
     </div>
   </div>
 </template>

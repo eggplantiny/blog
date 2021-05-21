@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-screen-md mx-auto">
+  <section class="max-w-xl mx-auto">
     <e-list>
       <template
         v-for="article of articles"
@@ -12,41 +12,44 @@
             <h2 class="text-xl font-bold">
               {{ article.title }}
             </h2>
-            <div>
+            <p>
               {{ article.description }}
-            </div>
+            </p>
+            <p class="text-right font-thin text-sm">
+              {{ timeFilter(article.createdAt) }}
+            </p>
           </e-list-item>
         </nuxt-link>
       </template>
     </e-list>
-    <e-card />
   </section>
 </template>
 
 <script lang="ts">
 
-import EList from '~/components/atoms/List/EList.vue'
-import EListItem from '~/components/atoms/List/EListItem.vue'
-import ECard from '~/components/atoms/Card/ECard.vue'
+import { defineComponent, useStore } from '@nuxtjs/composition-api'
+import { timeFilter } from '@/compositions/filter'
+import EList from '@/components/atoms/List/EList.vue'
+import EListItem from '@/components/atoms/List/EListItem.vue'
 
-export default {
+export default defineComponent({
   name: 'Root',
   components: {
-    ECard,
     EList,
     EListItem
   },
-  async asyncData ({ $content, params }) {
-    const articles = await $content('articles', params.slug)
-      .only(['title', 'description', 'img', 'slug', 'author'])
-      .sortBy('createdAt', 'desc')
-      .fetch()
+  setup () {
+    const store = useStore()
+    const articles = store.getters['articles/articles']
+    const categories = store.getters['articles/categories']
 
     return {
-      articles
+      articles,
+      categories,
+      timeFilter
     }
   }
-}
+})
 </script>
 
 <style scoped lang="scss">

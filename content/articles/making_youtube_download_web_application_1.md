@@ -1,12 +1,7 @@
 ---
 title: YouTube Download 웹앱 개발
 description: This is a description for the article about me
-img: https://images.unsplash.com/photo-1580752300992-559f8e0734e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80
-alt: nice image
-author:
-name: Peter
-bio: All about Peter and what he does and where he works
-img: https://images.unsplash.com/photo-1533636721434-0e2d61030955?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80
+category: javascript
 tags:
 - web development
 ---
@@ -16,8 +11,6 @@ tags:
 뭔가 사이드 프로젝트를 하나 해보고 싶다는 생각이 문득 들었다.
 
 그러던 중 [ytdl-core](https://github.com/fent/node-ytdl-core#readme) 라는 재밌는 프로젝트를 발견하고 개발을 진행해보고자 한다.
-
----
 
 ## ytdl-core 는 무슨 라이브러리인가?
 
@@ -35,8 +28,6 @@ ytdl('http://www.youtube.com/watch?v=aqz-KE-bpKQ')
 ```
 
 이렇게 유튜브 영상의 주소만 입력하면 스트림 형태로 데이터를 받을 수 있도록 도와주는 유용한 라이브러리이다. 😎
-
----
 
 ## 그런데 문제가 발생했다 😭
 

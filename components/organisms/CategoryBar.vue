@@ -15,8 +15,9 @@
 
 <script lang="ts">
 import { defineComponent, useStore } from '@nuxtjs/composition-api'
-import EList from '@/components/atoms/List/EList'
-import EListItem from '@/components/atoms/List/EListItem'
+
+import EList from '@/components/atoms/List/EList.vue'
+import EListItem from '@/components/atoms/List/EListItem.vue'
 
 export default defineComponent({
   name: 'CategoryBar',
@@ -26,14 +27,12 @@ export default defineComponent({
   },
   setup () {
     const store = useStore()
-    const classes = []
     const categories = store.getters['articles/categories']
-    const onClickItem = item => window.alert('hello', item)
+    const onClickItem = (item: string) => window.alert(`hello ${item}`)
 
     return {
       categories,
-      onClickItem,
-      classes
+      onClickItem
     }
   }
 })

@@ -15,9 +15,9 @@
 
 <script lang="ts">
 
-import EAppBar from '@/components/atoms/AppBar/EAppBar'
-import CategoryBar from '@/components/organisms/CategoryBar'
+import EAppBar from '@/components/atoms/AppBar/EAppBar.vue'
 import EFooter from '@/components/atoms/Footer/EFooter.vue'
+import CategoryBar from '@/components/organisms/CategoryBar.vue'
 
 export default {
   components: {

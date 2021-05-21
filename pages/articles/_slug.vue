@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-xl mx-auto text-white">
+  <section class="max-w-xl mx-auto text-white px-4">
     <header>
       {{ title }}
     </header>

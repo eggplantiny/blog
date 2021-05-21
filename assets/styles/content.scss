@@ -32,13 +32,31 @@ strong {
 }
 
 pre, .nuxt-content-highlight {
-  @apply text-sm rounded-lg;
+  @apply text-sm rounded-lg mt-4 mb-4;
 }
 
 .token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
   @apply bg-transparent;
 }
 
+blockquote {
+  @apply bg-indigo-600 rounded-lg px-8 py-4 font-bold mb-4 mt-4;
+}
+
+img {
+  @apply rounded-lg mt-4 mb-4;
+}
+
 hr {
   @apply mt-16 mb-16
+}
+
+p {
+  code {
+    @apply px-2 py-1 mr-1 rounded-lg bg-indigo-600
+  }
+}
+
+a {
+  @apply underline;
 }

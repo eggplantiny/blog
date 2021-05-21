@@ -10,8 +10,18 @@
 
 html, body, #__nuxt, #__layout {
   @apply bg-indigo-900;
+  overflow-y: overlay;
 }
 
 ::selection {
   @apply bg-indigo-200 text-black;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }

@@ -19,9 +19,6 @@ ytdl-core 는 Nodejs 의 Stream Interface 를 사용하는 Youtube download API 
 ```jsx
 const fs = require('fs');
 const ytdl = require('ytdl-core');
-// TypeScript: import ytdl from 'ytdl-core'; with --esModuleInterop
-// TypeScript: import * as ytdl from 'ytdl-core'; with --allowSyntheticDefaultImports
-// TypeScript: import ytdl = require('ytdl-core'); with neither of the above
 
 ytdl('http://www.youtube.com/watch?v=aqz-KE-bpKQ')
   .pipe(fs.createWriteStream('video.mp4'));
@@ -33,15 +30,17 @@ ytdl('http://www.youtube.com/watch?v=aqz-KE-bpKQ')
 
 해당 라이브러리를 Web 에서 바로 쓸려고 시도해봤는데 무수한 CORS 에러의 요청을 받게되었다 😭
 
-![/static/images/making_youtube_download_web_application_1/1.png](/static/images/making_youtube_download_web_application_1/1.png)
+![Error Image](/images/making_youtube_download_web_application_1/1.png)
 
 무수한 CORS 에러의 요청이라니 😲
 
-🤔 CORS (Cross-Origin Resource Sharing) 이란 무엇인가요 ?
 
-추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제이다.
+#### CORS (Cross-Origin Resource Sharing) 이란 무엇인가요 ?
+
+>추가 HTTP 헤더를 사용하여, 한 출처에서 실행 중인 웹 애플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에 알려주는 체제이다.
 
 해당 프로젝트 [GitHub Issue](https://github.com/fent/node-ytdl-core/issues/561) 를 둘러보니까 이미 해당 증상으로 수 많은 사람들이 질문을 한걸 파악했다. 클라이언트에서 직접 해당 라이브러리를 사용하려면 아래와 같이 HttpsProxyAgent 를 이용해 우회접근하는 방법을 써야한다.
+
 
 ```jsx
 const ytdl = require('..');
@@ -70,8 +69,8 @@ stream.on('end', () => {
 });
 ```
 
-🤔 Proxy Server 는 무엇인가요?
+#### Proxy Server 는 무엇인가요?
 
-클라이언트가 자신을 통해서 다른 네트워크 서비스에 간접적으로 접속할 수 있게 해 주는 컴퓨터 시스템이나 응용 프로그램을 가리킨다.
+>클라이언트가 자신을 통해서 다른 네트워크 서비스에 간접적으로 접속할 수 있게 해 주는 컴퓨터 시스템이나 응용 프로그램을 가리킨다.
 
 그런데, 안정적인 무료 프록시 서버를 구하기도 힘들고 직접 구현하기도 뭐해서 그냥 [N](http://node.us)ode + Express 로 직접 백엔드를 구현하고자 한다.

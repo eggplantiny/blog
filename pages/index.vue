@@ -6,7 +6,7 @@
       >
         <nuxt-link
           :key="article.slug"
-          :to="`/articles/${article.slug}`"
+          :to="`/blog/articles/${article.slug}`"
         >
           <e-list-item>
             <h2 class="text-xl font-bold">

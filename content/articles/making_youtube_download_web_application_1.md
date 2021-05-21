@@ -30,7 +30,7 @@ ytdl('http://www.youtube.com/watch?v=aqz-KE-bpKQ')
 
 해당 라이브러리를 Web 에서 바로 쓸려고 시도해봤는데 무수한 CORS 에러의 요청을 받게되었다 😭
 
-![Error Image](/blog/images/making_youtube_download_web_application_1/1.png)
+![Error Image](/images/making_youtube_download_web_application_1/1.png)
 
 무수한 CORS 에러의 요청이라니 😲
 

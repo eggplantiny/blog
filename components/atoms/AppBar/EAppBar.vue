@@ -31,6 +31,10 @@ export default defineComponent({
     const buttons = ref([
       {
         to: '/',
+        label: 'Home'
+      },
+      {
+        to: '/blog',
         label: 'Blog'
       },
       {

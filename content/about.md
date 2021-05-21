@@ -15,5 +15,3 @@
 ### Backend
 - Node
 - Express
-
-<lazy-img></lazy-img>

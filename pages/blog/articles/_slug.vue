@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  layout: 'blog',
   async asyncData ({ $content, params }) {
     console.log(params.slug)
     const doc = await $content('articles', params.slug).fetch()

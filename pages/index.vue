@@ -1,56 +1,38 @@
 <template>
-  <section class="max-w-xl mx-auto">
-    <e-list>
-      <template
-        v-for="article of articles"
+  <div>
+    <div class="z-10 w-30 fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4">
+      <nuxt-link
+        to="/blog"
+        class="text-white font-bold text-4xl hover:text-indigo-100 transition-colors"
       >
-        <nuxt-link
-          :key="article.slug"
-          :to="`/blog/articles/${article.slug}`"
-        >
-          <e-list-item>
-            <h2 class="text-xl font-bold">
-              {{ article.title }}
-            </h2>
-            <p>
-              {{ article.description }}
-            </p>
-            <p class="text-right font-thin text-sm">
-              {{ timeFilter(article.createdAt) }}
-            </p>
-          </e-list-item>
-        </nuxt-link>
-      </template>
-    </e-list>
-  </section>
+        Hello, I'm eggplantiny
+      </nuxt-link>
+    </div>
+    <canvas ref="canvas" id="canvas" />
+  </div>
 </template>
 
 <script lang="ts">
-
-import { defineComponent, useStore } from '@nuxtjs/composition-api'
-import { timeFilter } from '@/compositions/filter'
-import EList from '@/components/atoms/List/EList.vue'
-import EListItem from '@/components/atoms/List/EListItem.vue'
+import { defineComponent, onMounted } from '@nuxtjs/composition-api'
+import ParticleEffect from '@/canvas/particles-effect/app.js'
 
 export default defineComponent({
-  name: 'Root',
-  components: {
-    EList,
-    EListItem
-  },
+  name: 'Index',
+  layout: 'home',
   setup () {
-    const store = useStore()
-    const articles = store.getters['articles/articles']
-    const categories = store.getters['articles/categories']
-
-    return {
-      articles,
-      categories,
-      timeFilter
-    }
+    onMounted(() => {
+      const canvas = document.getElementById('canvas')
+      const particleEffect = new ParticleEffect(canvas)
+    })
   }
 })
 </script>
 
 <style scoped lang="scss">
+  #canvas {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 0;
+  }
 </style>

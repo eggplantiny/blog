@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 text-white">
+  <section class="px-4 text-white max-w-xl mx-auto">
     <template v-if="doc">
       <header>
         {{ doc.title }}
@@ -26,23 +26,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useContext, useAsync, useRoute } from '@nuxtjs/composition-api'
+// import { defineComponent, useContext, useAsync, useRoute } from '@nuxtjs/composition-api'
 import { timeFilter } from '@/compositions/filter'
 
-export default defineComponent({
+export default {
   layout: 'blog',
-  setup () {
-    const { $content } = useContext()
-    const route = useRoute()
-
-    const doc = useAsync(() => $content('articles', route.value.params.slug).fetch())
+  async asyncData (ctx: Context): Promise<object | void> | object | void {
+    const doc = await ctx.$content('articles', ctx.params.slug).fetch()
 
     return {
-      doc,
-      timeFilter
+      doc
     }
+  },
+  methods: {
+    timeFilter
   }
-})
+}
 </script>
 
 <style scoped lang="scss">

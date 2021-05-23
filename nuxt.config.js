@@ -54,7 +54,8 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/composition-api/module'
+    '@nuxtjs/composition-api/module',
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Nuxt.js modules
@@ -77,6 +78,13 @@ export default {
   */
   content: {
     liveEdit: false
+  },
+  /*
+  ** Google Analytics configuration
+  ** See https://google-analytics.nuxtjs.org/
+  */
+  googleAnalytics: {
+    id: 'UA-153118663-1'
   },
   /*
   ** Build configuration

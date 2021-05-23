@@ -19,8 +19,8 @@
 <script lang="ts">
 import { defineComponent, useStore } from '@nuxtjs/composition-api'
 
-import EList from '@/components/atoms/List/EList.vue'
-import EListItem from '@/components/atoms/List/EListItem.vue'
+import EList from '~/components/atoms/List/EList.vue'
+import EListItem from '~/components/atoms/List/EListItem.vue'
 
 export default defineComponent({
   name: 'CategoryBar',

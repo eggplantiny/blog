@@ -27,12 +27,20 @@ export default defineComponent({
     text: {
       type: Boolean,
       default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
   setup (props) {
-    const { color, dark, text } = props
+    const { color, dark, text, size } = props
 
-    const classes = reactive([...generateColorClass(color, dark, text)])
+    const classes = reactive([...generateColorClass(color, dark, text), `btn--size--${size}`])
 
     return {
       classes
@@ -43,6 +51,14 @@ export default defineComponent({
 
 <style scoped lang="scss">
   .btn {
-    @apply text-base font-medium rounded-lg px-4 py-2 focus:outline-none transition-colors;
+    @apply text-base font-medium rounded-lg focus:outline-none transition-colors select-none;
+  }
+
+  .btn--size--normal {
+    @apply px-4 py-2;
+  }
+
+  .btn--size--small {
+    @apply px-2 py-1 text-sm;
   }
 </style>

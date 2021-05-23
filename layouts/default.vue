@@ -15,7 +15,7 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 import EAppBar from '@/components/atoms/AppBar/EAppBar.vue'
 import EFooter from '@/components/atoms/Footer/EFooter.vue'
-import CategoryBar from '@/components/organisms/CategoryBar.vue'
+import CategoryBar from '~/components/organisms/blog/CategoryBar.vue'
 
 export default defineComponent({
   name: 'Default',

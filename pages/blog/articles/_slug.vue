@@ -8,7 +8,7 @@
         {{ doc.subtitle }}
       </div>
       <div class="description">
-        <div>
+        <div class="mb-1">
           📁 {{ doc.category }}
         </div>
         <div>
@@ -22,24 +22,57 @@
         />
       </article>
     </template>
+
+    <article-footer
+      :prev="prev"
+      :next="next"
+    />
   </section>
 </template>
 
-<script lang="ts">
+<script>
 import { timeFilter } from '@/compositions/filter'
-import { Context } from '@nuxt/types'
+import ArticleFooter from '@/components/organisms/blog/Articles/ArticleFooter.vue'
 
 export default {
+  name: 'Article',
+  components: {
+    ArticleFooter
+  },
   layout: 'blog',
-  async asyncData (ctx: Context) {
+  async asyncData (ctx) {
     const doc = await ctx.$content('articles', ctx.params.slug).fetch()
 
+    const [prev, next] = await ctx.$content('articles')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(ctx.params.slug)
+      .fetch()
+
     return {
-      doc
+      doc,
+      prev,
+      next
     }
   },
   methods: {
     timeFilter
+  },
+  head () {
+    const doc = this.doc
+
+    return {
+      title: doc.title,
+      meta: [
+        { hid: 'description', name: 'description', content: doc.description },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: doc.title },
+        { hid: 'og:description', property: 'og:description', content: doc.description },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: doc.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: doc.description }
+      ]
+    }
   }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="text-white px-2">
+  <section class="text-white px-2 max-w-xl mx-auto">
     <article>
       <nuxt-content
         :document="about"
@@ -9,20 +9,19 @@
   </section>
 </template>
 
-<script>
-import { defineComponent, useContext, useAsync } from '@nuxtjs/composition-api'
+<script lang="ts">
+import { Context } from '@nuxt/types'
 
-export default defineComponent({
+export default {
   name: 'About',
-  setup () {
-    const { $content } = useContext()
-    const about = useAsync(() => $content('about').fetch())
+  async asyncData (ctx: Context) {
+    const about = await ctx.$content('about').fetch()
 
     return {
       about
     }
   }
-})
+}
 </script>
 
 <style scoped lang="scss">

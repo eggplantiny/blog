@@ -1,5 +1,22 @@
 
-console.log(process.env.NODE_ENV)
+function generateSitemapRoutes () {
+  let posts = []
+
+  return async () => {
+    const routes = []
+    const { $content } = require('@nuxt/content')
+
+    if (posts === null || posts.length === 0) {
+      posts = await $content('articles').fetch()
+    }
+
+    for (const post of posts) {
+      routes.push(`blog/articles/${post.slug}`)
+    }
+
+    return routes
+  }
+}
 
 export default {
   /*
@@ -73,6 +90,15 @@ export default {
   */
   axios: {},
   /*
+  ** Pwa module configuration
+  ** See https://pwa.nuxtjs.org/options
+  */
+  pwa: {
+    icon: {
+      fileName: 'icon.png'
+    }
+  },
+  /*
   ** Content module configuration
   ** See https://content.nuxtjs.org/configuration
   */
@@ -96,7 +122,8 @@ export default {
     exclude: [
       '/secret',
       '/admin/**'
-    ]
+    ],
+    routes: generateSitemapRoutes()
   },
   /*
   ** Build configuration

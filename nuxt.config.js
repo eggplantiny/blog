@@ -87,6 +87,18 @@ export default {
     id: 'UA-153118663-1'
   },
   /*
+  ** Sitemap configuration
+  ** See https://sitemap.nuxtjs.org/
+  */
+  sitemap: {
+    hostname: 'https://eggplantiny.github.io',
+    gzip: true,
+    exclude: [
+      '/secret',
+      '/admin/**'
+    ]
+  },
+  /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */

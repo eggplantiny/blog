@@ -62,11 +62,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    '@nuxtjs/axios', // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content'
+    '@nuxt/content', // Doc: https://github.com/nuxt/content
+    '@nuxtjs/sitemap'
   ],
   /*
   ** Axios module configuration

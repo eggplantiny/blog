@@ -26,12 +26,12 @@
 </template>
 
 <script lang="ts">
-// import { defineComponent, useContext, useAsync, useRoute } from '@nuxtjs/composition-api'
 import { timeFilter } from '@/compositions/filter'
+import { Context } from '@nuxt/types'
 
 export default {
   layout: 'blog',
-  async asyncData (ctx: Context): Promise<object | void> | object | void {
+  async asyncData (ctx: Context) {
     const doc = await ctx.$content('articles', ctx.params.slug).fetch()
 
     return {

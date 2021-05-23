@@ -1,5 +1,8 @@
 <template>
-  <e-list class="sticky top-0">
+  <e-list class="sticky top-0 left-0">
+    <div class="text-xl text-left text-white font-bold mb-4">
+      📁 Cetegory
+    </div>
     <template
       v-for="(category, index) in categories"
     >

@@ -1,6 +1,14 @@
 
 header {
-  @apply text-4xl font-extrabold mb-12;
+  @apply text-4xl font-extrabold mb-4 text-indigo-100 tracking-wide break-words;
+}
+
+.subtitle {
+  @apply text-xl font-bold tracking-wide break-words;
+}
+
+.description {
+  @apply font-thin tracking-wide text-right mb-4 break-words;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -8,19 +16,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  @apply text-3xl font-bold mb-6 mt-12;
+  @apply text-3xl font-bold my-8;
 }
 
 h2 {
-  @apply text-2xl font-bold mb-6 mt-12;
+  @apply text-2xl font-bold my-8;
 }
 
 h3 {
-  @apply text-xl font-bold my-3;
+  @apply text-xl font-bold my-4;
 }
 
 h4 {
-  @apply text-lg font-bold my-3;
+  @apply text-lg font-bold my-4;
 }
 
 p {
@@ -41,6 +49,10 @@ pre, .nuxt-content-highlight {
 
 blockquote {
   @apply bg-indigo-600 rounded-lg px-8 py-4 font-bold mb-4 mt-4;
+
+  p {
+    @apply mb-0;
+  }
 }
 
 img {
@@ -52,8 +64,9 @@ hr {
 }
 
 p {
+  @apply mb-4;
   code {
-    @apply px-2 py-1 mr-1 rounded-lg bg-indigo-600
+    @apply px-1 mx-1 rounded bg-indigo-600
   }
 }
 
@@ -65,6 +78,11 @@ ul {
   @apply ml-4;
 
   li {
-    @apply leading-7 list-inside list-disc;
+    @apply leading-7 list-none;
+  }
+
+  li::before {
+    content: "✔ ";
+    margin-right: 4px;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <ul class="divide-y divide-gray-100">
+  <ul>
     <slot />
   </ul>
 </template>

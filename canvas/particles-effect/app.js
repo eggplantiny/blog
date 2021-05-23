@@ -125,4 +125,19 @@ export default class App {
     this.draw()
     this.connect()
   }
+
+  destroy () {
+    if (this.animateReq !== null) {
+      cancelAnimationFrame(this.animateReq)
+      this.animateReq = null
+    }
+
+    if (this.canvas !== null) {
+      this.canvas = null
+    }
+
+    if (this.ctx !== null) {
+      this.ctx = null
+    }
+  }
 }

@@ -13,7 +13,7 @@
               {{ article.title }}
             </h2>
             <p>
-              {{ article.description }}
+              {{ article.subtitle }}
             </p>
             <p class="text-right font-thin text-sm">
               {{ timeFilter(article.createdAt) }}

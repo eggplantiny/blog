@@ -1,12 +1,11 @@
 ---
 title: Promise.allSettled 가 필요한 순간
-description: Promise.allSettled 가 필요한 순간
+subtitle: Promise.allSettled 는 왜 필요한가? 🙄
+description: Promise 에 대한 고촬과 Promise.allSettled 사용방법. 
 category: javascript
 tags:
-  - web development
   - javascript
   - promise
-  - allSettlted
 ---
 
 우리는 발전하는 Javascript 덕에 수 없이 많은 구원을 받았다 믿고있다.

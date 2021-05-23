@@ -17,7 +17,7 @@ export const mutations = {
 export const actions = {
   async fetchArticleList ({ commit }, { $content }) {
     const articles = await $content('articles')
-      .only(['title', 'description', 'img', 'slug', 'author', 'category', 'createdAt'])
+      .only(['title', 'description', 'subtitle', 'img', 'slug', 'author', 'category', 'createdAt'])
       .sortBy('createdAt', 'desc')
       .fetch()
     commit('SET_ARTICLE_LIST', articles)

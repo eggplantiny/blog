@@ -1,5 +1,5 @@
 import moment from 'moment'
 
-export function timeFilter (date :string, format: string = 'YYYY년 MM월 DD일') {
+export function timeFilter (date :string, format: string = 'YYYY. MM. DD.') {
   return moment(date).format(format)
 }

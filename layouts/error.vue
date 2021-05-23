@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="text-white">
     <h1 v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
     <h1 v-else>
       {{ otherError }}
     </h1>
-    <NuxtLink to="/">
-      Home page
-    </NuxtLink>
+    <h2>
+      {{ error.message }}
+    </h2>
   </div>
 </template>
 
@@ -23,13 +23,12 @@ export default {
   },
   data () {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred'
+      pageNotFound: '페이지를 찾을 수 없습니다.',
+      otherError: '에러가 발생했습니다.'
     }
   },
   head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
+    const title = 'Error'
     return {
       title
     }
@@ -37,8 +36,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 h1 {
-  font-size: 20px;
+  @apply text-2xl mb-4;
 }
 </style>

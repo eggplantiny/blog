@@ -4,7 +4,7 @@
     class="flex hover:bg-indigo-400 transition-colors rounded"
     v-bind="$attrs"
   >
-    <e-button text size="small" class="w-full">
+    <e-button text size="small" class="w-full sm:px-4 sm:py-2 sm:text-lg">
       {{ prefix }} {{ label }} {{ suffix }}
     </e-button>
   </nuxt-link>

@@ -96,6 +96,9 @@ export default {
   pwa: {
     icon: {
       fileName: 'icon.png'
+    },
+    menifest: {
+      theme_color: '#312e81'
     }
   },
   /*

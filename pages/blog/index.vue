@@ -49,6 +49,20 @@ export default defineComponent({
       categories,
       timeFilter
     }
+  },
+  head () {
+    return {
+      title: 'about',
+      meta: [
+        { hid: 'description', name: 'description', content: '안녕하세요. 개발자 정성우의 블로그입니다.' },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: 'eggplantiny - home' },
+        { hid: 'og:description', property: 'og:description', content: '안녕하세요. 개발자 정성우의 블로그입니다.' },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: 'eggplantiny - home' },
+        { hid: 'twitter:description', name: 'twitter:description', content: '안녕하세요. 개발자 정성우의 블로그입니다.' }
+      ]
+    }
   }
 })
 </script>

@@ -33,6 +33,20 @@ export default defineComponent({
     onBeforeUnmount(() => {
       particleEffect.value?.destroy()
     })
+  },
+  head () {
+    return {
+      title: 'blog',
+      meta: [
+        { hid: 'description', name: 'description', content: 'blog' },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: 'blog' },
+        { hid: 'og:description', property: 'og:description', content: 'blog' },
+        // Twitter Card
+        { hid: 'twitter:title', name: 'twitter:title', content: 'blog' },
+        { hid: 'twitter:description', name: 'twitter:description', content: 'blog' }
+      ]
+    }
   }
 })
 </script>

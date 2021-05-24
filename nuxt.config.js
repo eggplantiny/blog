@@ -98,7 +98,13 @@ export default {
       fileName: 'icon.png'
     },
     menifest: {
-      theme_color: '#312e81'
+      name: 'eggplantiny',
+      short_name: 'eggplantiny',
+      theme_color: '#312e81',
+      background_color: '#312e81',
+      display: 'standalone',
+      start_url: './',
+      lang: 'kr'
     }
   },
   /*

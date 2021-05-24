@@ -88,6 +88,9 @@ export default {
     '@nuxtjs/sitemap',
     ['@nuxtjs/google-adsense', {
       id: 'ca-pub-7758221888679599'
+    }],
+    ['@nuxtjs/robots', {
+      Sitemap: 'http://eggplantiny.github.io/sitemap.xml'
     }]
   ],
   /*

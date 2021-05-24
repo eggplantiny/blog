@@ -52,7 +52,7 @@ export default defineComponent({
   },
   head () {
     return {
-      title: 'about',
+      title: 'blog',
       meta: [
         { hid: 'description', name: 'description', content: '안녕하세요. 개발자 정성우의 블로그입니다.' },
         // Open Graph

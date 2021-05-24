@@ -82,7 +82,10 @@ export default {
     '@nuxtjs/axios', // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
     '@nuxt/content', // Doc: https://github.com/nuxt/content
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    ['@nuxtjs/google-adsense', {
+      id: 'ca-pub-7758221888679599'
+    }]
   ],
   /*
   ** Axios module configuration

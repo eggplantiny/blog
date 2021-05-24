@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-xl mx-auto">
+  <section class="max-w-2xl mx-auto">
     <e-list>
       <template
         v-for="article of articles"

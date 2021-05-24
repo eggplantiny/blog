@@ -1,5 +1,5 @@
 <template>
-  <section class="px-4 text-white max-w-xl mx-auto">
+  <section class="px-4 text-white max-w-2xl mx-auto">
     <template v-if="doc">
       <header>
         {{ doc.title }}

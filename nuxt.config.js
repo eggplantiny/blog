@@ -90,9 +90,9 @@ export default {
       id: 'ca-pub-7758221888679599'
     }],
     ['@nuxtjs/robots', {
-      Allow: '*',
+      Allow: '/',
       UserAgent: '*',
-      Sitemap: 'http://eggplantiny.github.io/sitemap.xml'
+      Sitemap: 'https://eggplantiny.github.io/sitemap.xml'
     }]
   ],
   /*

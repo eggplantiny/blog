@@ -90,6 +90,8 @@ export default {
       id: 'ca-pub-7758221888679599'
     }],
     ['@nuxtjs/robots', {
+      Allow: '*',
+      UserAgent: '*',
       Sitemap: 'http://eggplantiny.github.io/sitemap.xml'
     }]
   ],
@@ -135,8 +137,7 @@ export default {
   ** See https://sitemap.nuxtjs.org/
   */
   sitemap: {
-    hostname: 'https://eggplantiny.github.io',
-    gzip: true,
+    hostname: 'https://eggplantiny.github.io/',
     exclude: [
       '/secret',
       '/admin/**'

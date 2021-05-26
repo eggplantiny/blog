@@ -2,11 +2,11 @@
 title: Vue 에서 Kakao SDK 쉽게 사용하기
 subtitle: Vue 에서 Kakao SDK 는 어떻게 사용하나요?
 description: vue-kakao-sdk plugin 을 이용해 쉽게 Kakao SDK 사용하기
-category: Vue
+category: vue
 tags:
-- Vue
-- Kakao SDK
-- Vue Plugin
+- vue
+- kakao SDK
+- vue Plugin
 ---
 
 # Kakao SDK 는 어떻게 사용하나요?
@@ -50,10 +50,10 @@ Plugin 을 등록한다. 이때, 아까 발급받은 **Javascript 앱키를 등�
 ```js
 // main.js
 import Vue from 'vue'
-import VueKakaoSdk from 'vue-kakao-sdk'
+import VueKakaoSdk from 'content/articles/vue-kakao-sdk'
 
 const apiKey = 'Your Kakao API Javascript Key'
-Vue.use(VueKakaoSdk, { apiKey }) // apiKey 를 반드시 입력해줘야한다.
+Vue.use(VueKakaoSdk, {apiKey}) // apiKey 를 반드시 입력해줘야한다.
 ```
 
 ## 6. Profit!

@@ -61,7 +61,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    { src: '~/plugins/update.client.js', mode: 'server' }
+    '~/plugins/update.client.js'
   ],
   /*
   ** Auto import components

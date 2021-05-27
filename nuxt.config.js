@@ -34,10 +34,12 @@ export default {
   ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s',
     title: process.env.npm_package_name || '',
-    htmlAttrs: {
-      lang: 'ko'
+    metaInfo: {
+      htmlAttrs: {
+        lang: 'ko'
+      }
     },
     meta: [
       { charset: 'utf-8' },

@@ -49,10 +49,13 @@ export default {
       .surround(ctx.params.slug)
       .fetch()
 
+    const slug = ctx.params.slug
+
     return {
       doc,
       prev,
-      next
+      next,
+      slug
     }
   },
   methods: {
@@ -60,15 +63,19 @@ export default {
   },
   head () {
     const doc = this.doc
+    const slug = this.slug
 
     return {
       title: doc.title,
       meta: [
         { hid: 'description', name: 'description', content: doc.description },
         // Open Graph
+        { hid: 'og:type', property: 'og:type', content: 'article' },
+        { hid: 'og:url', property: 'og:url', content: `https://eggplantiny.github.io/${slug}` },
         { hid: 'og:title', property: 'og:title', content: doc.title },
         { hid: 'og:description', property: 'og:description', content: doc.description },
         // Twitter Card
+        { hid: 'twitter:card', property: 'twitter:card', content: 'summary_large_image' },
         { hid: 'twitter:title', name: 'twitter:title', content: doc.title },
         { hid: 'twitter:description', name: 'twitter:description', content: doc.description }
       ]

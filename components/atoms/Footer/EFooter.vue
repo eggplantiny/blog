@@ -5,7 +5,6 @@
     </div>
     <div class="icons">
       <a
-        v-show="false"
         href="https://www.linkedin.com/in/%EC%84%B1%EC%9A%B0-%EC%A0%95-b757a9141/"
         class="icon linkedin"
         target="_blank"

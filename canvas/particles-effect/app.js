@@ -53,10 +53,12 @@ export default class App {
 
   initialize () {
     this.particleArray = []
-    const numberOfParticles = (this.canvas.width * this.canvas.height) / 9000
+    const numberOfParticles = Math.min((this.canvas.width * this.canvas.height) / 9000, 200)
+
+    console.log('number of particles', numberOfParticles)
 
     for (let c = 0; c < numberOfParticles; c++) {
-      const size = (Math.random() * 5) + 1
+      const size = (Math.random() * 8) + 1
       const x = (Math.random() * ((this.canvas.width - size * 2) - (size * 2)) + size * 2)
       const y = (Math.random() * ((this.canvas.height - size * 2) - (size * 2)) + size * 2)
       const directionX = (Math.random() * 5) - 2.5

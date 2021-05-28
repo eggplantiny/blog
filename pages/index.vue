@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="z-10 w-30 fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4">
+    <div class="z-10 w-30 fixed top-1/2 left-1/2 transform -translate-x-2/4 -translate-y-2/4 z-10">
       <nuxt-link
         to="/blog"
         class="text-white font-bold text-4xl hover:text-indigo-100 transition-colors"

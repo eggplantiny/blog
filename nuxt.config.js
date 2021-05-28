@@ -157,7 +157,6 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    transpile: ['unist-util-visit-parents']
   },
   /*
   ** Compiler option configuration

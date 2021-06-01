@@ -151,9 +151,9 @@ genPrimeNumber(10001) // 2
         <label for="input">
           N번째 소수
         </label>
-        <input id="input" placeholder="N을 입력해주세요" type="number" class="mx-2 bg-indigo-500 focus:outline-none focus:bg-indigo-300 text-white px-2 py-1 rounded">
+        <input id="input" placeholder="N을 입력해주세요" type="number" class="mx-2 bg-indigo-600 focus:outline-none focus:bg-indigo-200 text-white px-2 py-1 rounded">
       </div>
-      <button id="btn" class="bg-indigo-500 hover:bg-indigo-300 text-white px-2 py-1 rounded">
+      <button id="btn" class="bg-indigo-600 hover:bg-indigo-200 text-white px-2 py-1 rounded">
         소수 찾기
       </button>
     </div>

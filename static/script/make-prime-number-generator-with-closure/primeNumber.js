@@ -52,7 +52,15 @@ const board = document.getElementById('result')
 const genPrimeNumber = closurePrimeNumber()
 
 function action () {
-  const n = input.value
+  const n = Number(input.value)
+  if (isNaN(n)) {
+    return alert('N을 입력해주세요 😊')
+  }
+
+  if (n <= 0) {
+    return alert('0 이상의 자연수를 입력 해 주세요 😊')
+  }
+
   const { result, duration } = runningTimeCalculator(() => genPrimeNumber(n))
   appendResult(board, `${n}번째 소수: ${result} (연산시간: ${duration}ms)`)
 }

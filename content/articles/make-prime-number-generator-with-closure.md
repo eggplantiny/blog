@@ -17,7 +17,7 @@ tags:
 ## 함수안의 함수?
 
 처음 자바스크립트를 접했을 때를 생각해보면 정말 생소한 단어들을 많이 접했던 것 같다. 그중 특히 생소하고 이해되지 않았던 그 단어 `Closure` 😑. 
-자바스크립트 개발자로 면접을 다닐때에도 클로저라는 개념을 물어보는 경우가 많았던것 같다. 그때마다 기계적으로 **함수안의 함수**라고 답하기만 헀다.
+자바스크립트 개발자로 면접을 다닐때에도 클로저라는 개념을 물어보는 경우가 많았던것 같다. 그때마다 기계적으로 **함수안의 함수**라고 답하기만 했다.
 사실 틀린말은 아니다. 하지만 개념을 안다고 클로저를 잘 활용하는건 아니지 않는가? 그렇게 클로저라는 개념을 배우고도 실제로 활용하는 방법을 익힐때까진 꽤 시간이 필요했던것 같다.
 그럼 실제로 `Closure`를 활용해 **소수 생성기**를 직접 만들어보자. 그것도 `Memoization`기법을 적용해서 😉
 
@@ -151,7 +151,7 @@ genPrimeNumber(10001) // 2
         <label for="input">
           N번째 소수
         </label>
-        <input id="input" placeholder="N을 입력해주세요" type="number" class="mx-2 bg-indigo-600 focus:outline-none focus:bg-indigo-200 text-white px-2 py-1 rounded">
+        <input id="input" placeholder="N을 입력해주세요" type="number" class="mx-2 bg-indigo-600 focus:outline-none focus:bg-indigo-200 text-black px-2 py-1 rounded">
       </div>
       <button id="btn" class="bg-indigo-600 hover:bg-indigo-200 text-white px-2 py-1 rounded">
         소수 찾기

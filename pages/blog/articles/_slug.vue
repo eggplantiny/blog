@@ -21,6 +21,12 @@
           class="content"
         />
       </article>
+      <section class="comments" aria-labelledby="comment">
+        <h2 id="comment">
+          Comments
+        </h2>
+        <Disqus />
+      </section>
     </template>
 
     <article-footer

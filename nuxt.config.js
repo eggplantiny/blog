@@ -63,7 +63,8 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
-    '~/plugins/update.client.js'
+    '~/plugins/update.client.js',
+    '~/plugins/vueDisqus.js'
   ],
   /*
   ** Auto import components

@@ -23,7 +23,7 @@ export const actions = {
     commit('SET_ARTICLE_LIST', articles)
   },
   setSelectedCategory ({ commit }, category) {
-    commit('SET_SELECTED_CATEGORY',category)
+    commit('SET_SELECTED_CATEGORY', category)
   }
 }
 

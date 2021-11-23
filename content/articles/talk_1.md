@@ -3,6 +3,7 @@ title: 블로그를 시작해보자 😀
 subtitle: 블로그를 시작하면서.
 description: Hello, Blog!
 category: talk
+createdAt: 2021-04-29
 tags:
 - 잡설
 ---

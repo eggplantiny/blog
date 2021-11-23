@@ -3,6 +3,7 @@ title: Promise.allSettled 가 필요한 순간
 subtitle: Promise.allSettled 는 왜 필요한가? 🙄
 description: Promise 에 대한 고촬과 Promise.allSettled 사용방법. 
 category: javascript
+createdAt: 2021-06-15
 tags:
   - javascript
   - promise

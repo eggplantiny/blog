@@ -3,6 +3,7 @@ title: Closure 를 활용한 소수 찾기
 subtitle: Closure 를 활용한 메모이제이션 기법 N번째 소수 찾기
 description: Closure 를 활용한 메모이제이션 기법 N번째 소수 찾기
 category: javascript
+createdAt: 2021-05-15
 tags:
 - javascript
 - closure

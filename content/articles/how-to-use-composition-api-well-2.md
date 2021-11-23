@@ -3,6 +3,7 @@ title: Composition API 를 활용해보자! - 2
 subtitle: Composition API 의 의의와 활용
 description: Composition API 의 의의와 활용
 category: vue
+createdAt: 2021-11-23
 tags:
 - vue
 - composition api

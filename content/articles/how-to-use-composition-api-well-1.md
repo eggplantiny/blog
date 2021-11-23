@@ -3,6 +3,7 @@ title: Composition API 를 활용해보자! - 1
 subtitle: Singleton Pattern 을 이용해 Composition API 활용하기
 description: Singleton Pattern 을 이용해 Composition API 활용하기
 category: vue
+createdAt: 2021-07-12
 tags:
 - vue
 - composition api

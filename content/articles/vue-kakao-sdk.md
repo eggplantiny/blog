@@ -3,6 +3,7 @@ title: Vue 에서 Kakao SDK 쉽게 사용하기
 subtitle: Vue 에서 Kakao SDK 는 어떻게 사용하나요?
 description: vue-kakao-sdk plugin 을 이용해 쉽게 Kakao SDK 사용하기
 category: vue
+createdAt: 2021-05-10
 tags:
 - vue
 - kakao SDK

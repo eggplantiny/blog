@@ -86,3 +86,19 @@ ul {
     margin-right: 4px;
   }
 }
+
+ol {
+  @apply ml-4;
+
+  li {
+    @apply leading-8 list-decimal ml-4;
+  }
+}
+pre[class*="language-"] {
+  word-spacing: 1.5px;
+  letter-spacing: .5px;
+}
+
+ul, ol {
+  @apply mb-4;
+}

@@ -53,7 +53,7 @@ export default class App {
 
   initialize () {
     this.particleArray = []
-    const numberOfParticles = Math.min((this.canvas.width * this.canvas.height) / 9000, 200)
+    const numberOfParticles = Math.min((this.canvas.width * this.canvas.height) / 9000, 180)
 
     console.log('number of particles', numberOfParticles)
 
@@ -85,7 +85,6 @@ export default class App {
 
   connect () {
     for (let a = 0; a < this.particleArray.length; a++) {
-
       for (let b = 0; b < this.particleArray.length; b++) {
         if (a === b) {
           continue

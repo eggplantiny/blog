@@ -1,5 +1,4 @@
 export default class Particle {
-
   constructor (x, y, directionX, directionY, size, color, delta = 2) {
     this.x = x
     this.y = y

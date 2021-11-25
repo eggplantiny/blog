@@ -42,7 +42,7 @@ export const useCounterStore = defineStore("counter", {
 `Vuex`와 차이점이 뭘까? 일단 코드를 딱 보면 뭔가 `Vuex` 와 비슷한 것 같다.
 하지만 조금만 자세히 살펴보면 알게될 것이다.
 
-그것은 `Mutations` 가 없다는 것이다 😮. `Mutations` 가 없어졌기 때문에
+그것은 **`Mutations` 가 없다는 것**이다 😮. `Mutations` 가 없어졌기 때문에
 더이상 불필요한 `Mutations` 선언 필요 없이  `actions` 에서 값이 변했다는걸 입력 할 수 있게 되었다.
 
 또한 `Composition API` 가 익숙한 Vue3 사용자들을 위해
@@ -121,12 +121,13 @@ export default {
 ## 그래서 왜 Pinia? 🤔
 위에 글로만 읽어보면 뭔가 쉽고 편해진건 알겠는데 왜 멀쩡한 `Vuex` 를 두고 굳이 `Pinia` 를 선택해야 하나? 라는 질문을 가지게 될 것이다. 그럼 `Vuex` 와 `Pinia` 를 비교한 공식문서의 단락을 잠깐 살펴보고 결정을 해보자. [링크](https://pinia.esm.dev/introduction.html#comparison-with-vuex-3-x-4-x)
 
-- `mutations` 는 더이상 없음.
-- `Typescript` 를 지원하기위해 더이상 복잡한 래핑을 하지 않아도 된다.
-- 아주 빠르고 정확한 `autocompletion`
-- `namespaced modules` 은 바이바이 🙋‍♂️
-- `devtools` 지원
-  나는 여기서 `mutations` 이 없어진것과 쉽고 간편한 `Typescript` 지원이 정말 맘에 들었다. `actions` 하나 추가하기 위해서 여태 얼마나 많은 `mutations` 를 작성했던가 🥲. 또한 `Typescript` 를 한번 사용해볼려고 얼마나 삽질을 했는데 막상 Vue SFC 내부에선 잘 잡히지도 않는 타입들...🤦‍♂️ 진절머리나 나던차에 `Pinia` 를 잠깐 사용해보니 정말 신세계였다 😮
+- **mutations** 는 더이상 없음.
+- **Typescript** 를 지원하기위해 더이상 복잡한 래핑을 하지 않아도 된다.
+- 아주 빠르고 정확한 **autocompletion**
+- **namespaced modules** 은 바이바이 🙋‍♂️
+- **devtools** 공식 지원
+
+나는 여기서 `mutations` 이 없어진것과 쉽고 간편한 `Typescript` 지원이 정말 맘에 들었다. `actions` 하나 추가하기 위해서 여태 얼마나 많은 `mutations` 를 작성했던가 🥲. 또한 `Typescript` 를 한번 사용해볼려고 얼마나 삽질을 했는데 막상 Vue SFC 내부에선 잘 잡히지도 않는 타입들...🤦‍♂️ 진절머리나 나던차에 `Pinia` 를 잠깐 사용해보니 정말 신세계였다 😮
 
 하지만 `Pinia` 를 사용하기 망설인 가장 큰 이유...
 **공식 플러그인이 아닌데요...?**
@@ -179,7 +180,10 @@ export default {
 
 사실 맞다 👌
 
-사실 `Pinia` 는 Vue의 코어팀에서 활동하는 [Eduardo](https://github.com/posva) 가 Vuex 5 의 [RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 에 따라 아직 나오지 않은 `Vuex 5` 에 대한 구현체로 `Pinia` 를 작성한 것이다. 공식문서에 따르면 `Vue` 의 철학을 충실하게 따르면서 `Pinia` 를 개발중이며, 추후에 `Pinia` 와 `Vuex 5` 두 프로젝트를 하나로 합치거나 아주 쉽게 이동할 수 있도록 할것이라 한다 😍
+사실 `Pinia` 는 Vue의 코어팀에서 활동하는 [Eduardo](https://github.com/posva) 가 
+Vuex 5 의 [RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 에 따라 
+아직 나오지 않은 **`Vuex 5` 에 대한 구현체로 `Pinia` 를 작성한 것**이다. 
+공식문서에 따르면 `Vue` 의 철학을 충실하게 따르면서 `Pinia` 를 개발중이며, 추후에 **`Pinia` 와 `Vuex 5` 두 프로젝트를 하나로 합치거나 아주 쉽게 이동할 수 있도록 할것**이라 한다 😍
 
 ## 마무리
 사실 새로운걸 배우고 익히는건 재밌지만 그걸 실제 프로젝트에 적용하고 녹이는건 분명 큰 도전이라 생각한다. 하지만 분명한건 `Pinia` 는 이미 어느정도 친숙한 `Composition API` 라는 틀을 이용해 상태관리를 쉽고 재밌게 만들어주는 아주 좋은 도구라는건 틀림없다 생각한다 😊

@@ -175,10 +175,10 @@ export default {
   }
 }
 ```
-이거... 뭔가 익숙한 코드 아닌가...?🤔
-사라진 `mutations`... `Composition API` 처럼 사용하는 store...? 이거 아까 봤던 `Pinia` 코드 아닌가...??
+이거 뭔가 익숙한 코드 아닌가...?🤔
+사라진 `mutations`, `Composition API` 처럼 사용하는 store? 이거 아까 봤던 `Pinia` 코드 아닌가..?
 
-사실 맞다 👌
+맞다 👌
 
 사실 `Pinia` 는 Vue의 코어팀에서 활동하는 [Eduardo](https://github.com/posva) 가 
 Vuex 5 의 [RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 에 따라 

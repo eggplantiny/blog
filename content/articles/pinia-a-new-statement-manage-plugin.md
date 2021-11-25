@@ -131,7 +131,7 @@ export default {
 하지만 `Pinia` 를 사용하기 망설인 가장 큰 이유...
 **공식 플러그인이 아닌데요...?**
 
-## 사실상 공식 플러그인이 되어버린 Pinia 😮
+##  Pinia 는 사실 공식 플러그인...? 😮
 하지만 [레딧](https://www.reddit.com/r/vuejs/comments/ni3wqh/pinia_an_alternative_vuejs_store/)과 [피나아 공식 문서](https://pinia.esm.dev/introduction.html#comparison-with-vuex) 를 자세히 살펴보고 그런 걱정을 조금 덜 수 있었다.
 
 일단 2021년 3월 2일에 올라온 [Vuex 5 에 대한 RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 문서의 코드조각을 잠깐 살펴보자.
@@ -180,9 +180,8 @@ export default {
 맞다 👌
 
 사실 `Pinia` 는 Vue의 코어팀에서 활동하는 [Eduardo](https://github.com/posva) 가 
-Vuex 5 의 [RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 에 따라 
-아직 나오지 않은 **`Vuex 5` 에 대한 구현체로 `Pinia` 를 작성한 것**이다. 
-공식문서에 따르면 `Vue` 의 철학을 충실하게 따르면서 `Pinia` 를 개발중이며, 추후에 **`Pinia` 와 `Vuex 5` 두 프로젝트를 하나로 합치거나 아주 쉽게 이동할 수 있도록 할것**이라 한다 😍
+Vuex 5 의 [RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 에 따라 **`Vuex 5` 의 구현체로 `Pinia` 를 작성한 것**이다. 
+공식문서에 따르면 `Vue` 의 철학을 충실하게 따르면서 `Pinia` 를 개발중이며, 추후에 **`Pinia` 와 `Vuex 5` 두 프로젝트를 하나로 합치거나 아주 쉽게 이동할 수 있도록 지원할 것**이라 한다 😍
 
 ## 마무리
 사실 새로운걸 배우고 익히는건 재밌지만 그걸 실제 프로젝트에 적용하고 녹이는건 분명 큰 도전이라 생각한다. 하지만 분명한건 `Pinia` 는 이미 어느정도 친숙한 `Composition API` 라는 틀을 이용해 상태관리를 쉽고 재밌게 만들어주는 아주 좋은 도구라는건 틀림없다 생각한다 😊

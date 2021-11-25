@@ -17,11 +17,10 @@ tags:
 
 왜 Vue 에서 가장 중요하고 핵심인 상태관리 플러그인 `Vuex` 를 뒤로 두고 새로운 `Pinia` 를 추천하게 된 것일까?
 
-`Pinia` 의 특징은 무엇이고 무엇이 `Vuex` 와 다른지 잠깐 살펴보자.
+`Pinia` 의 특징은 무엇이고 `Vuex` 와 어떤점이 다른지 잠깐 살펴보자.
 
 ## Into the Pinia
 ```js
-// stores/counter.js
 // stores/counter.js
 import { defineStore } from "pinia";
 
@@ -39,11 +38,11 @@ export const useCounterStore = defineStore("counter", {
   }
 });
 ```
-`Vuex`와 차이점이 뭘까? 일단 코드를 딱 보면 뭔가 `Vuex` 와 비슷한 것 같다.
+위 코드는 `Piana` 의 Store 선언 구문이다. `Vuex`와 차이점이 뭘까? 일단 코드를 딱 보면 뭔가 `Vuex` 와 비슷한 것 같다.
 하지만 조금만 자세히 살펴보면 알게될 것이다.
 
-그것은 **`Mutations` 가 없다는 것**이다 😮. `Mutations` 가 없어졌기 때문에
-더이상 불필요한 `Mutations` 선언 필요 없이  `actions` 에서 값이 변했다는걸 입력 할 수 있게 되었다.
+그것은 **`mutations` 가 없다는 것**이다 😮. `mutations` 가 없어졌기 때문에
+더이상 거추장한 `mutations` 선언 필요 없이  `actions` 에서 값이 변했다는걸 입력 할 수 있게 되었다.
 
 또한 `Composition API` 가 익숙한 Vue3 사용자들을 위해
 ```js
@@ -73,10 +72,10 @@ export default {
     const onClickAdd = () => {
       // 이런식으로 Composition API 사용하는식으로 사용도 가능하고
       counter.count++
-      	// 내부 API 를 사용 가능하고 (with autocompletion ✨)
-      // counter.$patch({ count: counter.count + 1 })
-      	// 또는 직접 actions 를 선언해서 사용할수도 있다.
-      // counter.increment()
+      // 내부 API 를 사용 가능하고 (with autocompletion ✨)
+      counter.$patch({ count: counter.count + 1 })
+      // 또는 직접 actions 를 선언해서 사용할수도 있다.
+      counter.increment()
     }
     
     return {
@@ -135,7 +134,7 @@ export default {
 ## 사실상 공식 플러그인이 되어버린 Pinia 😮
 하지만 [레딧](https://www.reddit.com/r/vuejs/comments/ni3wqh/pinia_an_alternative_vuejs_store/)과 [피나아 공식 문서](https://pinia.esm.dev/introduction.html#comparison-with-vuex) 를 자세히 살펴보고 그런 걱정을 조금 덜 수 있었다.
 
-2021년 3월 2일에 올라온 [Vuex 5 에 대한 RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 문서를 잠깐 살펴보자.
+일단 2021년 3월 2일에 올라온 [Vuex 5 에 대한 RFC](https://github.com/kiaking/rfcs/blob/vuex-5/active-rfcs/0000-vuex-5.md) 문서의 코드조각을 잠깐 살펴보자.
 
 ```js
 // stores/counter.js
@@ -175,8 +174,8 @@ export default {
   }
 }
 ```
-이거 뭔가 익숙한 코드 아닌가...?🤔
-사라진 `mutations`, `Composition API` 처럼 사용하는 store? 이거 아까 봤던 `Pinia` 코드 아닌가..?
+이거 뭔가 익숙한 코드 아닌가...? 🤔
+사라진 `mutations`, `Composition API` 처럼 사용하는 store? 이거 아까 봤던 `Pinia` 코드 아닌가?
 
 맞다 👌
 

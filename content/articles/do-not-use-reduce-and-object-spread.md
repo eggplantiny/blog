@@ -12,11 +12,9 @@ tags:
 
 # **Reduce** 와 **...** 구문으로 깔끔한 코드 만들기 😎
 
-`reduce` 라는 함수. 처음엔 정말 어려웠다 🥲. 세상 모든 문제는 `map` 과 `filter` 두 함수면 모두 다 풀어낼 수 있을것 같았다. 
-
-하지만, 그 생각은 `reduce` 의 진가를 몰랐기 때문이다.
-
-`reduce` 는 배열 형태로 되어있는 정보를 하나의 정보로 합칠때 굉장히 유용하다. 
+`reduce()` 라는 함수. 처음엔 정말 어려웠다 🥲. 세상 모든 문제는 `map` 과 `filter` 두 함수면 모두 다 풀어낼 수 있을것 같았다. 
+하지만, 그 생각은 `reduce()` 의 진가를 몰랐기 때문이다.
+`reduce()` 는 배열 형태로 되어있는 정보를 하나의 정보로 합칠때 굉장히 유용하다. 
 
 예를들어, 
 
@@ -58,9 +56,9 @@ const menuObject = menuList
 ```
 
 이렇게 **배열속 객체의 값을 키로 하는 하나의 새로운 객채**를 만드는 등 아주 유용하게 쓸 수 있다. 
-특히, 위의 예제처럼 `reduce` 를 `Spread Operator` (**...** 구문) 과 함깨 활용해 아주 쉽고 깔끔하게 `Object` 를 하나로 합칠 수 있다. ☺️
+특히, 위의 예제처럼 `reduce()` 를 `Spread Operator` (**...** 구문) 과 함깨 활용해 아주 쉽고 깔끔하게 `Object` 를 하나로 합칠 수 있다. ☺️
 
-그런데, **과연 깔끔하기만 한 코드가 좋은 코드일까...? 🧐**
+그런데, **과연 위 코드가 좋은 코드일까...? 🧐**
 
 # 대체 뭐가 문젠대? ☹️
 
@@ -110,13 +108,13 @@ process 10000 items using spread operator : 10070ms
 
 # **Spread Operator** 의 실체를 파해쳐보자.
 
-여기서 우리는 reduce() 함수 속을 다시 한번 살펴보자.
+여기서 우리는 `reduce()` 속을 다시 한번 살펴보자.
 
 ```ts
 ({ ...acc, [item.id]: { name: item.name, index }})
 ```
 
-이 구문은 reduce 내부에서 **Spread Operator** 를 활용해 이전에 생성된 Object 를 풀어주고 새로운 아이템을 추가하는 구문이다.
+이 구문은 `reduce()` 내부에서 **Spread Operator** 를 활용해 이전에 생성된 Object 를 풀어주고 새로운 아이템을 추가하는 구문이다.
 
 그럼 여기서 사용된 **Spread Operator** 가 무엇인지 [TC39 Proposal](https://github.com/tc39/proposal-object-rest-spread/blob/main/Spread.md) 에서 조금 자세히 알아보자.
 
@@ -159,7 +157,7 @@ const dst = likeObjectAssign(t, src)
 
 > **Object.assign** 동작에 대해 자세히 알고 싶다면 [TC39](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.assign) 를 확인해보자.
 
-자 우린 위 글에서 강조된 부분을 상기하고 가장 아래 코드를 우리가 reduce 의 입장에 서서 한번 생각해보자.
+자 우린 위 글에서 강조된 부분을 상기하고 가장 아래 코드를 우리가 `reduce()` 의 입장에 서서 한번 생각해보자.
 
 ```ts
 const menuList = [
@@ -188,7 +186,7 @@ const menuObject = menuList
 ```
 
 그후 두번째 항목인 **{ id: 'zzm', name: '짜장면' }** 에 대해 연산이 진행되면 
-reduce 내부에 선언된 `Spread Operator` 가 `Object.assign` 의 동작을 수행하게 되는데
+`reduce()` 내부에 선언된 `Spread Operator` 가 `Object.assign` 의 동작을 수행하게 되는데
 `Object.assign` 은 이전에 선언된 **`acc` 에서 키값을 추출 후 순회하면서 값을 저장 후 반환**하게 된다.
 
 ```json

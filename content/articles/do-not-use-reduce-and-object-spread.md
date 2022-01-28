@@ -106,7 +106,7 @@ process 10000 items using spread operator : 10070ms
 
 도대체 무엇이 우리의 예상을 틀리게 만든것인가...?
 
-# **Spread Operator** 의 실체를 파해쳐보자.
+# `Spread Operator` 의 실체를 파해쳐보자.
 
 여기서 우리는 `reduce()` 속을 다시 한번 살펴보자.
 
@@ -114,9 +114,9 @@ process 10000 items using spread operator : 10070ms
 ({ ...acc, [item.id]: { name: item.name, index }})
 ```
 
-이 구문은 `reduce()` 내부에서 **Spread Operator** 를 활용해 이전에 생성된 Object 를 풀어주고 새로운 아이템을 추가하는 구문이다.
+이 구문은 `reduce()` 내부에서 `Spread Operator` 를 활용해 이전에 생성된 Object 를 풀어주고 새로운 아이템을 추가하는 구문이다.
 
-그럼 여기서 사용된 **Spread Operator** 가 무엇인지 [TC39 Proposal](https://github.com/tc39/proposal-object-rest-spread/blob/main/Spread.md) 에서 조금 자세히 알아보자.
+그럼 여기서 사용된 `Spread Operator` 가 무엇인지 [TC39 Proposal](https://github.com/tc39/proposal-object-rest-spread/blob/main/Spread.md) 에서 조금 자세히 알아보자.
 
 ```ts
 // Shallow Clone (excluding prototype)
@@ -126,9 +126,9 @@ let aClone1 = { ...a };
 let aClone2 = Object.assign({}, a);
 ```
 
-우와! `Spread Operator` 는 `Object.assign` 에 대한 **Syntex sugar** 였던 것이다.
+우와! `Spread Operator` 는 `Object.assign()` 에 대한 **Syntex sugar** 였던 것이다.
 
-그럼 이제 `Object.assign` 이 뭔지 [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)에서 한번 살펴보자.
+그럼 이제 `Object.assign()` 이 뭔지 [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)에서 한번 살펴보자.
 
 > Object.assign() 메서드는 출처 객체들의 **모든 열거 가능한 자체 속성을 복사해 대상 객체에 붙여넣습니다**. 그 후 대상 객체를 반환합니다.
 
@@ -153,7 +153,7 @@ function likeObjectAssign (target, source) {
 const dst = likeObjectAssign(t, src)
 ```
 
-이때, `Object.assign` 은 객체를 복사할 때 해당 객체가 가지고 있는 **키값을 유사배열 형태로 만들고 순회를 하면서 새로운 객체에 저장**한다.
+이때, `Object.assign()` 은 객체를 복사할 때 해당 객체가 가지고 있는 **키값을 유사배열 형태로 만들고 순회를 하면서 새로운 객체에 저장**한다.
 
 > **Object.assign** 동작에 대해 자세히 알고 싶다면 [TC39](https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.assign) 를 확인해보자.
 
@@ -186,8 +186,8 @@ const menuObject = menuList
 ```
 
 그후 두번째 항목인 **{ id: 'zzm', name: '짜장면' }** 에 대해 연산이 진행되면 
-`reduce()` 내부에 선언된 `Spread Operator` 가 `Object.assign` 의 동작을 수행하게 되는데
-`Object.assign` 은 이전에 선언된 **`acc` 에서 키값을 추출 후 순회하면서 값을 저장 후 반환**하게 된다.
+`reduce()` 내부에 선언된 `Spread Operator` 가 `Object.assign()` 의 동작을 수행하게 되는데
+`Object.assign()` 은 이전에 선언된 **`acc` 에서 키값을 추출 후 순회하면서 값을 저장 후 반환**하게 된다.
 
 ```json
 {

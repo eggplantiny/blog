@@ -37,8 +37,9 @@
 </template>
 
 <script>
-import { timeFilter } from '@/compositions/filter'
-import ArticleFooter from '@/components/organisms/blog/Articles/ArticleFooter.vue'
+import { timeFilter } from '~/compositions/filter'
+import ArticleFooter from '~/components/organisms/blog/Articles/ArticleFooter.vue'
+import { refineContent } from '~/helper/refineContent'
 
 export default {
   name: 'Article',
@@ -49,11 +50,16 @@ export default {
   async asyncData (ctx) {
     const doc = await ctx.$content('articles', ctx.params.slug).fetch()
 
+    refineContent(doc)
+
     const [prev, next] = await ctx.$content('articles')
       .only(['title', 'slug'])
       .sortBy('createdAt', 'asc')
       .surround(ctx.params.slug)
       .fetch()
+
+    refineContent(prev)
+    refineContent(next)
 
     const slug = ctx.params.slug
 

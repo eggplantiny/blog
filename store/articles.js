@@ -1,3 +1,4 @@
+import { refineContent } from '~/helper/refineContent'
 
 export const state = () => ({
   articleList: [],
@@ -6,6 +7,9 @@ export const state = () => ({
 
 export const mutations = {
   SET_ARTICLE_LIST (state, items) {
+    items.forEach((item) => {
+      refineContent(item)
+    })
     state.articleList.splice(0, state.articleList.length)
     state.articleList.push(...items)
   },
@@ -34,3 +38,19 @@ export const getters = {
     categorySet.add(category) || categorySet, new Set()).values()
   ).filter(category => category)
 }
+
+// 출력값
+// {
+//   "tpk": {
+//     "name": "떡볶이",
+//     "index": 0
+//   },
+//   "zzm": {
+//     "name": "짜장면",
+//     "index": 1
+//   },
+//   "kb": {
+//     "name": "김밥",
+//     "index": 2
+//   }
+// }

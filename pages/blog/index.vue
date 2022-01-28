@@ -27,7 +27,7 @@
 
 <script lang="ts">
 
-import { defineComponent, useStore } from '@nuxtjs/composition-api'
+import { computed, defineComponent, useStore } from '@nuxtjs/composition-api'
 import { timeFilter } from '~/compositions/filter'
 import EList from '~/components/atoms/List/EList.vue'
 import EListItem from '~/components/atoms/List/EListItem.vue'
@@ -41,8 +41,8 @@ export default defineComponent({
   },
   setup () {
     const store = useStore()
-    const articles = store.getters['articles/articles']
-    const categories = store.getters['articles/categories']
+    const articles = computed(() => store.getters['articles/articles'])
+    const categories = computed(() => store.getters['articles/categories'])
 
     return {
       articles,
